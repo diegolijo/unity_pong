@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,8 @@ public class GameManager : MonoBehaviour
     public int scorePL;
     public int scorePR;
 
-    [SerializeField] Text scoreTextPL;
-    [SerializeField] Text scoreTextPR;
+    [SerializeField] TextMeshProUGUI scoreTextPL;
+    [SerializeField] TextMeshProUGUI scoreTextPR;
 
     [SerializeField] GameObject ball;
     public bool isPlaying = false;
