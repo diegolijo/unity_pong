@@ -7,10 +7,10 @@ public class NewBehaviourScript : MonoBehaviour
 {
     float MAX_Y = 4.5f;
     float MIN_Y = -4.5f;
-    [SerializeField] float speed = 15.0f;
+    [SerializeField] float speed;
     void Start()
     {
-
+        speed = 10f;
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             if (Input.GetKey("down"))
             {
-                transform.Translate(Vector3.up * speed * -Time.deltaTime);
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
             }
         }
 
@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             if (Input.GetKey("z"))
             {
-                transform.Translate(Vector3.up * speed * -Time.deltaTime);
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
             }
         }
 

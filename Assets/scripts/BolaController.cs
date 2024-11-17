@@ -6,13 +6,18 @@ public class BolaController : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] GameManager manager;
-    /* [SerializeField] float force = 0.5f; */
+    [SerializeField] float force;
     [SerializeField] float MIN_DEG = 20f;
     [SerializeField] float MAX_DEG = 50f;
     public Vector3 resetPosition;
     private int delay = 2;
+
+    float MAX_Y = 4.0f;
+    float MIN_Y = -4.0f;
+
     void Start()
     {
+        force = 0.8f;
         resetPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         int dirX = new[] { -1, 1 }[Random.Range(0, 2)];
@@ -60,7 +65,7 @@ public class BolaController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        float posY = Random.Range(2.5f, 2.5f);
+        float posY = Random.Range(MIN_Y, MAX_Y);
         transform.position = new Vector3(resetPosition.x, posY, 0);
 
         float deg = Random.Range(MIN_DEG, MAX_DEG) * Mathf.Deg2Rad;
@@ -72,7 +77,7 @@ public class BolaController : MonoBehaviour
         Vector2 impulse = new Vector2(x, y);
 
         rb.velocity = Vector2.zero;
-        rb.AddForce(impulse, ForceMode2D.Impulse);
+        rb.AddForce(impulse * force, ForceMode2D.Impulse);
 
     }
 }
