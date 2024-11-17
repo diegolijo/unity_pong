@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - pala_r
-  - pala_l
-  - bola
+  - ball
+  - goal_l
+  - goal_r
+  - paddle_r
+  - paddle_l
   layers:
   - Default
   - TransparentFX

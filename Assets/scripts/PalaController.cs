@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -5,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     float MAX_Y = 4.5f;
     float MIN_Y = -4.5f;
-    [SerializeField] float speed = 20.0f;
+    [SerializeField] float speed = 15.0f;
     void Start()
     {
 
@@ -14,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
 
-        if (gameObject.CompareTag("pala_r"))
+        if (gameObject.CompareTag("paddle_r"))
         {
             if (Input.GetKey("up"))
             {
@@ -27,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        if (gameObject.CompareTag("pala_l"))
+        if (gameObject.CompareTag("paddle_l"))
         {
             if (Input.GetKey("a"))
             {
